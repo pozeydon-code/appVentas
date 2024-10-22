@@ -14,22 +14,22 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
-import ThemeToggleButton from './ThemeToggleButton';
+import { ThemeToggleButton } from './ThemeToggleButton';
 import { ReactNode } from 'react';
+import { Logo } from '../Logo';
 
-
-
-const LinkItem = ({ href, children, ...props }: { href: string, children: ReactNode, }) => {
+export const LinkItem = ({ to, children, ...props }: { to: string, children: ReactNode, }) => {
   const location = useLocation();
-  const isActive = location.pathname === href;
+  const isActive = location.pathname === to;
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900')
 
   return (
     <Link
       as={NavLink}
-      href={href}
+      to={to}
       p={2}
-      bg={isActive ? 'glassTeal' : undefined}
+      borderRadius={10}
+      bg={isActive ? 'grassTeal' : undefined}
       color={isActive ? '#202023' : inactiveColor}
       {...props}
     >
@@ -38,7 +38,7 @@ const LinkItem = ({ href, children, ...props }: { href: string, children: ReactN
   )
 }
 
-const NavBar = () => {
+export const NavBar = () => {
 
   return (
     <Box
@@ -59,7 +59,7 @@ const NavBar = () => {
       >
         <Flex textAlign="center" mr={5}>
           <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-            VentasLogo
+            <Logo />
           </Heading>
         </Flex>
 
@@ -71,13 +71,13 @@ const NavBar = () => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
-          <LinkItem href="/works">
-            Works
+          <LinkItem to="/">
+            About
           </LinkItem>
-          <LinkItem href="/wallpapers">
+          <LinkItem to="/wallpapers">
             Wallpapers
           </LinkItem>
-          <LinkItem href="/works">
+          <LinkItem to="/works">
             Works
           </LinkItem>
         </Stack>
@@ -115,4 +115,3 @@ const NavBar = () => {
   )
 }
 
-export default NavBar;

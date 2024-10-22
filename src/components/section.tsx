@@ -8,7 +8,7 @@ const StyledDiv = chakra(motion.div, {
   },
 });
 
-const Section = ({ children, delay = 0 }: { children: ReactNode, delay: number }) => {
+export const Section = ({ children, delay = 0 }: { children: ReactNode, delay?: number }) => {
   return (
     <StyledDiv
       initial={{ y: 10, opacity: 0 }}
@@ -21,5 +21,3 @@ const Section = ({ children, delay = 0 }: { children: ReactNode, delay: number }
 
   );
 };
-
-export default Section
