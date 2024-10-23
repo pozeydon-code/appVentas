@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { Box, Text, LinkBox, LinkOverlay } from "@chakra-ui/react"
+import { Box, Text, LinkBox, LinkOverlay, Image } from "@chakra-ui/react"
 import { Global } from "@emotion/react";
 import { ReactNode } from "react";
 import gridStyles from '@/modules/grid.module.css'
@@ -32,10 +32,13 @@ export const GridItems = ({ children, category = 'productos', id, title, thumbna
         to={`/${category}/${id}`}
         cursor="pointer"
       >
-        <img
+        <Image
           src={thumbnail}
           alt={title}
           className={gridStyles.gridItemThumbnail}
+          objectFit="cover"
+          width="100%"
+          height="300px"
         />
         <LinkOverlay as="div" href={`/${category}/${id}`}>
           <Text mt={2} fontSize={20}>

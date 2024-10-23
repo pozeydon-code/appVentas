@@ -9,10 +9,11 @@ import {
 import { NavLink, useParams } from 'react-router-dom';
 import { ItemProducto } from './components';
 import { Layout } from '@/components';
+import { patito, work } from '@/assets/images';
 
 const productos = [
-  { id: 'Producto1', nombre: 'Laptop', descripcion: 'Una laptop Potente' },
-  { id: 'Producto2', nombre: 'Monitor', descripcion: 'Monitor de alta resolucion' },
+  { id: 'Producto1', nombre: 'Laptop', descripcion: 'Una laptop Potente', source: work },
+  { id: 'Producto2', nombre: 'Monitor', descripcion: 'Monitor de alta resolucion', source: patito },
 ];
 
 export const ProductoInfo = () => {
@@ -37,7 +38,7 @@ export const ProductoInfo = () => {
 
   return (
     <Layout>
-      <ItemProducto title={producto.nombre} descripcion={producto.descripcion} />
+      <ItemProducto title={producto.nombre} descripcion={producto.descripcion} source={producto.source} />
     </Layout>
 
   )

@@ -84,10 +84,6 @@ export const Home = () => {
             <BioYear>Product 2</BioYear>
             Specifies about your product 2
           </BioSection>
-          <BioSection>
-            <BioYear>Product 3</BioYear>
-            Specifies about your product 3
-          </BioSection>
         </Section>
 
         <Section delay={0.3}>

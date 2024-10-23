@@ -1,6 +1,6 @@
 import { Container, Heading, SimpleGrid, Divider } from "@chakra-ui/react";
 import { Layout, GridItems } from "@/components";
-import { work } from "@/assets/images";
+import { patito, work } from "@/assets/images";
 import { Section } from "@/styled-components";
 
 export const Productos = () => {
@@ -17,7 +17,7 @@ export const Productos = () => {
             </GridItems>
           </Section>
           <Section>
-            <GridItems id="Producto2" title="Producto 2" thumbnail={work}>
+            <GridItems id="Producto2" title="Producto 2" thumbnail={patito}>
               Producto 2 - Recommendation for our sellers.
             </GridItems>
           </Section>
