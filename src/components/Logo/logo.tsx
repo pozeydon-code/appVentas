@@ -26,7 +26,7 @@ export const Logo = () => {
       <Link to='/'>
         <LogoBox>
           <Text
-            color={useColorModeValue('gray.200', 'whiteAlpha.900')}
+            color={useColorModeValue('gray.900', 'whiteAlpha.900')}
             fontFamily='M PLUS Rounded 1c", sans-serif'
             fontWeight="bold"
             ml={3}

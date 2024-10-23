@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { GridItemStyle } from "../grid-item";
 import { Helmet } from 'react-helmet';
 import { ReactNode } from "react";
+import { GridItemStyle } from "../Grids";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },

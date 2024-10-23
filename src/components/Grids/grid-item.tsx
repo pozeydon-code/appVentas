@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Box, Text, LinkBox, LinkOverlay } from "@chakra-ui/react"
 import { Global } from "@emotion/react";
 import { ReactNode } from "react";
+import gridStyles from '@/modules/grid.module.css'
 
 export const GridItem = ({ children, href, title, thumbnail }: { children: ReactNode, href: string, title: string, thumbnail: string }) => {
   return (
@@ -21,7 +22,7 @@ export const GridItem = ({ children, href, title, thumbnail }: { children: React
   );
 };
 
-export const WorkGridItem = ({ children, category = 'works', id, title, thumbnail }: {
+export const GridItems = ({ children, category = 'productos', id, title, thumbnail }: {
   children?: ReactNode, category?: string, id?: string, title?: string, thumbnail?: string
 }) => {
   return (
@@ -34,7 +35,7 @@ export const WorkGridItem = ({ children, category = 'works', id, title, thumbnai
         <img
           src={thumbnail}
           alt={title}
-          className="grid-item-thumbnail"
+          className={gridStyles.gridItemThumbnail}
         />
         <LinkOverlay as="div" href={`/${category}/${id}`}>
           <Text mt={2} fontSize={20}>

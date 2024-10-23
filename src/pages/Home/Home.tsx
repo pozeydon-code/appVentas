@@ -1,8 +1,9 @@
-import { Box, Button, Container, Heading, useColorModeValue } from "@chakra-ui/react";
-import { Section, Paragraph, BioSection, BioYear, Layout } from '@/components';
+import { Box, Button, Container, Flex, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react";
+import { GridItems, Layout } from '@/components';
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Link as ReactRouterLink } from "react-router-dom";
-import { patito } from "@/assets/images";
+import { patito, work } from "@/assets/images";
+import { BioSection, BioYear, Paragraph, Section } from "@/styled-components";
 
 export const Home = () => {
   return (
@@ -13,18 +14,18 @@ export const Home = () => {
           p={3}
           mb={6}
           textAlign="center"
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-          css={{ backdropFilter: 'blur(10px)' }}
+          bg={useColorModeValue('gray.200', 'whiteAlpha.200')}
+          css={{ backdropFilter: 'blur(20px)' }}
         >
-          Hello, this is my example page web
+          Hola, bienvenido a la mejor pagina de ventas.
         </Box>
 
         <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
-              Francisco Herrera
+              TechEnterprise
             </Heading>
-            <p>Web Developer</p>
+            <p>Distribuidores autorizados de los mejores productos en el mercado</p>
           </Box>
           <Box
             flexShrink={0}
@@ -54,21 +55,21 @@ export const Home = () => {
 
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            Work
+            Productos
           </Heading>
           <Paragraph>
-            Here you can write some information abour yourself.
+            Puedes encontrar todos los productos solo dando clic en el siguiente boton.
           </Paragraph>
-          <Box alignItems="center" my={4}>
+          <Flex justifyContent="center" my={4}>
             <Button
               as={ReactRouterLink}
-              to="/works"
+              to="/Productos"
               rightIcon={<ChevronRightIcon />}
               colorScheme="teal"
             >
-              My Work
+              Productos
             </Button>
-          </Box>
+          </Flex>
         </Section>
 
         <Section delay={0.2}>
@@ -88,7 +89,28 @@ export const Home = () => {
             Specifies about your product 3
           </BioSection>
         </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            Productos más populares.
+          </Heading>
+
+          <SimpleGrid columns={[1, 1, 2]} gap={6}>
+            <Section>
+              <GridItems id="trabajo1" title="trabajo1" thumbnail={work}>
+                Work 1 - Recommendation for our clients.
+              </GridItems>
+            </Section>
+            <Section>
+              <GridItems id="trabajo2" title="trabajo2" thumbnail={work}>
+                Work 2 - Recommendation for our sellers.
+              </GridItems>
+            </Section>
+          </SimpleGrid>
+        </Section>
       </Container >
     </Layout>
   );
 }
+
+export { getServerSideProps } from '@/components'

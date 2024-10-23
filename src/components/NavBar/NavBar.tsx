@@ -72,13 +72,16 @@ export const NavBar = () => {
           mt={{ base: 4, md: 0 }}
         >
           <LinkItem to="/">
-            About
+            Inicio
           </LinkItem>
-          <LinkItem to="/wallpapers">
-            Wallpapers
+          <LinkItem to="/Productos">
+            Productos
           </LinkItem>
-          <LinkItem to="/works">
-            Works
+          <LinkItem to="/Blogs">
+            Blogs
+          </LinkItem>
+          <LinkItem to="/Ubicanos">
+            Ubicanos
           </LinkItem>
         </Stack>
 
@@ -95,15 +98,19 @@ export const NavBar = () => {
               />
               <MenuList>
                 <MenuItem as={NavLink} to='/'>
-                  About
+                  Inicio
                 </MenuItem>
 
-                <MenuItem as={NavLink} to='/works'>
-                  Works
+                <MenuItem as={NavLink} to='/Productos'>
+                  Productos
                 </MenuItem>
 
-                <MenuItem as={NavLink} to='/wallpapers'>
-                  Wallpapers
+                <MenuItem as={NavLink} to='/Blogs'>
+                  Blogs
+                </MenuItem>
+
+                <MenuItem as={NavLink} to='/Ubicanos'>
+                  Ubicanos
                 </MenuItem>
               </MenuList>
             </Menu>
