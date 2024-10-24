@@ -4,3 +4,4 @@ export * from './Grids';
 export * from './layouts';
 export * from './Logo';
 export * from './chakra';
+export * from './VideoYoutube';

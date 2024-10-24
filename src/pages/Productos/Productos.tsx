@@ -2,25 +2,19 @@ import { Container, Heading, SimpleGrid, Divider } from "@chakra-ui/react";
 import { Layout, GridItems } from "@/components";
 import { patito, work } from "@/assets/images";
 import { Section } from "@/styled-components";
+import { ProductoItem } from "./components";
 
 export const Productos = () => {
   return (
     <Layout>
-      <Container>
+      <Container variant='page-container'>
         <Heading as="h3" fontSize={20} mb={4}>
           Productos
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section>
-            <GridItems id="Producto1" title="Producto 1" thumbnail={work}>
-              Producto 1 - Recommendation for our clients.
-            </GridItems>
-          </Section>
-          <Section>
-            <GridItems id="Producto2" title="Producto 2" thumbnail={patito}>
-              Producto 2 - Recommendation for our sellers.
-            </GridItems>
-          </Section>
+          <ProductoItem producto={{ id: 'Producto1', title: 'Producto 1', description: 'prueba descripcion 1', source: patito }} descripcionProducto="Recomendation for our clients" />
+
+          <ProductoItem producto={{ id: 'Producto2', title: 'Producto 2', description: 'prueba descripcion 2', source: work }} descripcionProducto="Recomendation for our sellers" />
         </SimpleGrid>
 
         <Section delay={0.2}>

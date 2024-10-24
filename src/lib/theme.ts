@@ -12,12 +12,20 @@ const styles = {
 const components = {
   //Controla el tamaño global de los contenedores
   Container: {
-    baseStyle: {
-      m: 0,
-      justifySelf: 'center',
-      maxW: 'none',
-      width: { base: 'fit', md: 'fit', m: 'fit', lg: '70%' }
-    }
+    variants: {
+      'page-container': {
+        m: 0,
+        justifySelf: 'center',
+        maxW: 'none',
+        width: { base: 'fit', md: 'fit', m: 'fit', lg: '70%' }
+      }
+    },
+    //baseStyle: {
+    //  m: 0,
+    //  justifySelf: 'center',
+    //  maxW: 'none',
+    //  width: { base: 'fit', md: 'fit', m: 'fit', lg: '70%' }
+    //},
   },
   Heading: {
     variants: {

@@ -1,1 +1,2 @@
-export * from './ItemProducto';
+export * from './ProductoInfoItem';
+export * from './ProductoItem';

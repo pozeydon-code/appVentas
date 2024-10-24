@@ -1,5 +1,5 @@
 import { Box, Button, Container, Flex, Heading, SimpleGrid, useColorModeValue } from "@chakra-ui/react";
-import { GridItems, Layout } from '@/components';
+import { FlexYoutubeVideo, GridItems, Layout } from '@/components';
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { patito, work } from "@/assets/images";
@@ -8,7 +8,7 @@ import { BioSection, BioYear, Paragraph, Section } from "@/styled-components";
 export const Home = () => {
   return (
     <Layout>
-      <Container>
+      <Container variant='page-container'>
         <Box
           borderRadius="lg"
           p={3}
@@ -53,24 +53,31 @@ export const Home = () => {
           </Box>
         </Box>
 
-        <Section delay={0.1}>
-          <Heading as="h3" variant="section-title">
-            Productos
-          </Heading>
-          <Paragraph>
-            Puedes encontrar todos los productos solo dando clic en el siguiente boton.
-          </Paragraph>
-          <Flex justifyContent="center" my={4}>
-            <Button
-              as={ReactRouterLink}
-              to="/Productos"
-              rightIcon={<ChevronRightIcon />}
-              colorScheme="teal"
-            >
-              Productos
-            </Button>
-          </Flex>
-        </Section>
+        <Flex gap={6} p={4} direction={{ base: 'column', md: 'row' }}>
+          <Box alignContent="center" flexBasis={{ base: '50%', md: '50%' }}>
+            <Section delay={0.1}>
+              <Heading as="h3" variant="section-title">
+                Productos
+              </Heading>
+              <Paragraph>
+                Puedes encontrar todos los productos solo dando clic en el siguiente boton.
+              </Paragraph>
+              <Flex justifyContent="center" my={4}>
+                <Button
+                  as={ReactRouterLink}
+                  to="/Productos"
+                  rightIcon={<ChevronRightIcon />}
+                  colorScheme="teal"
+                >
+                  Productos
+                </Button>
+              </Flex>
+            </Section>
+          </Box>
+          <FlexYoutubeVideo youtubeVideo={{ title: "Youtube Principal Video", src: "https://www.youtube.com/embed/w1mYUvsFj70", delay: 0.1 }} />
+        </Flex>
+
+
 
         <Section delay={0.2}>
           <Heading as="h3" variant="section-title">

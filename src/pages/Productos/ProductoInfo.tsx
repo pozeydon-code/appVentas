@@ -7,13 +7,13 @@ import {
   Text
 } from '@chakra-ui/react';
 import { NavLink, useParams } from 'react-router-dom';
-import { ItemProducto } from './components';
+import { ProductoInfoItem } from './components';
 import { Layout } from '@/components';
 import { patito, work } from '@/assets/images';
 
 const productos = [
-  { id: 'Producto1', nombre: 'Laptop', descripcion: 'Una laptop Potente', source: work },
-  { id: 'Producto2', nombre: 'Monitor', descripcion: 'Monitor de alta resolucion', source: patito },
+  { id: 'Producto1', title: 'Laptop', description: 'Una laptop Potente', source: work },
+  { id: 'Producto2', title: 'Monitor', description: 'Monitor de alta resolucion', source: patito },
 ];
 
 export const ProductoInfo = () => {
@@ -38,7 +38,9 @@ export const ProductoInfo = () => {
 
   return (
     <Layout>
-      <ItemProducto title={producto.nombre} descripcion={producto.descripcion} source={producto.source} />
+      <Container variant="page-container">
+        <ProductoInfoItem producto={producto} />
+      </Container>
     </Layout>
 
   )

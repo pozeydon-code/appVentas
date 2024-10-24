@@ -9,7 +9,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <NavBar />
-      <Container pt={14}>
+      <Container pt={14} variant="page-container">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/Productos' element={<Productos />} />
